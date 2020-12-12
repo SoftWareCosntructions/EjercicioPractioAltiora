@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <fa-icon [icon]="faBars"></fa-icon> Quick Shortcuts
+          </h3>
+        </div>
+        <div class="card-body">
+          <a [routerLink]="['/clientes']" class="btn btn-outline-secondary btn-lg m-1" role="button"> <fa-icon [icon]="faUser"></fa-icon><br />Clientes</a>
+          <a [routerLink]="['/ordenes']" class="btn btn-outline-secondary btn-lg m-1" role="button"> <fa-icon [icon]="faFileInvoiceDollar"></fa-icon><br />Ordenes</a>
+          <a [routerLink]="['/articulos']" class="btn btn-outline-secondary btn-lg m-1" role="button"> <fa-icon [icon]="faTablet"></fa-icon><br />Articulos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

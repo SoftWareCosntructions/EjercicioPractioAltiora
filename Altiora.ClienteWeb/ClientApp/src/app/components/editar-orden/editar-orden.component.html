@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="form-group col-md">
+    <label class="control-label">Cliente</label>
+    <label class="form-control">{{orden.cliente.nombre}} {{orden.cliente.apellido}}</label>
+  </div>
+  <div class="form-group col-md">
+    <label class="control-label">Fecha</label>
+    <label class="form-control">{{orden.fechaOrden}}</label>
+  </div>
+  <div class="form-group col-md">
+    <label class="control-label">N°</label>
+    <label class="form-control">{{orden.numeroOrden}}</label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+      <div class="form-group">
+        <app-tabla-detalle-orden [detalle]="orden.detallesOrden"></app-tabla-detalle-orden>
+      </div>
+      <div>
+        <a [routerLink]="['/ordenes']" class="btn btn-secondary float-right">Regresar</a>
+      </div>
+  </div>
+</div>

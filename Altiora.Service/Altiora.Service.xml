@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Altiora.Service</name>
+    </assembly>
+    <members>
+        <member name="T:Altiora.Service.Controllers.ArticulosController">
+            <summary>
+            Controlador Artículos
+            </summary>
+        </member>
+        <member name="M:Altiora.Service.Controllers.ArticulosController.#ctor(Altiora.Models.Servicios.IServicioArticulo,Microsoft.Extensions.Logging.ILogger{Altiora.Service.Controllers.ClientesController})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="servicioArticulo">Inyección del servicio Artículo</param>
+            <param name="logger">Inyección del logger</param>
+        </member>
+        <member name="M:Altiora.Service.Controllers.ArticulosController.ObtenerArticulos">
+            <summary>
+            Obtiene todos los artículos registrados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Altiora.Service.Controllers.ArticulosController.ObtenerCliente(System.Int32)">
+            <summary>
+            Obtiene el artículo por Id
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Altiora.Service.Controllers.ClientesController">
+            <summary>
+            Controlador Clientes
+            </summary>
+        </member>
+        <member name="M:Altiora.Service.Controllers.ClientesController.#ctor(Altiora.Models.Servicios.IServicioCliente,Microsoft.Extensions.Logging.ILogger{Altiora.Service.Controllers.ClientesController})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="servicioCliente">Inyeccion de dependencia IServicioCliente</param>
+            <param name="logger">Inyeccion de dependencia de ILogger</param>
+        </member>
+        <member name="M:Altiora.Service.Controllers.ClientesController.ObtenerClientes">
+            <summary>
+            Obtiene todos los clientes registrados
+            </summary>
+            <returns>Todos los registros de clientes</returns>
+        </member>
+        <member name="M:Altiora.Service.Controllers.ClientesController.ObtenerCliente(System.Int32)">
+            <summary>
+            Obtiene el cliente por Id
+            </summary>
+            <param name="Id">Id Cliente</param>
+            <returns>Resultado de la consulta</returns>
+        </member>
+        <member name="M:Altiora.Service.Controllers.ClientesController.ActualizarCliente(Altiora.Models.Data.Cliente)">
+            <summary>
+            Actualiza la orden
+            </summary>
+            <param name="nuevoCliente">Datos para la actualización</param>
+            <returns>resultados</returns>
+        </member>
+        <member name="M:Altiora.Service.Controllers.ClientesController.InsertarCliente(Altiora.Models.Data.Cliente)">
+            <summary>
+            Inserta Cliente
+            </summary>
+            <param name="Cliente">Datos para nuevo registro</param>
+            <returns>resultado</returns>
+        </member>
+        <member name="M:Altiora.Service.Controllers.ClientesController.EliminarCliente(System.Int32)">
+            <summary>
+            Eliminar Cliente
+            </summary>
+            <param name="Id">IdCliente a eliminar</param>
+            <returns>resultado</returns>
+        </member>
+        <member name="T:Altiora.Service.Controllers.OrdenesController">
+            <summary>
+            Controlador Ordenes
+            </summary>
+        </member>
+        <member name="M:Altiora.Service.Controllers.OrdenesController.#ctor(Altiora.Models.Servicios.IServicioOrden,Microsoft.Extensions.Logging.ILogger{Altiora.Service.Controllers.OrdenesController})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="servicioOrden">Servicio de entidad Orden</param>
+            <param name="logger">Logger</param>
+        </member>
+        <member name="M:Altiora.Service.Controllers.OrdenesController.ObtenerOrdenes">
+            <summary>
+            Obtiene todas las ordenes registrados
+            </summary>
+            <returns>Registros resultado de la consulta</returns>
+        </member>
+        <member name="M:Altiora.Service.Controllers.OrdenesController.ObtenerOrden(System.Int32)">
+            <summary>
+            Obtiene la orden por Id
+            </summary>
+            <param name="Id">IdCliente</param>
+            <returns>Registro resultado de la consulta</returns>
+        </member>
+        <member name="M:Altiora.Service.Controllers.OrdenesController.ActualizarOrdenAsync(Altiora.Models.Data.Orden)">
+            <summary>
+            Actualiza la orden
+            </summary>
+            <param name="nuevaOrden">Datos para la actualización</param>
+            <returns>resultados</returns>
+        </member>
+        <member name="M:Altiora.Service.Controllers.OrdenesController.InsertarOrdenAsync(Altiora.Models.Data.Orden)">
+            <summary>
+            Inserta orden
+            </summary>
+            <param name="orden">Datos para nuevo registro</param>
+            <returns>resultado</returns>
+        </member>
+        <member name="M:Altiora.Service.Controllers.OrdenesController.EliminarOrdenAsync(System.Int32)">
+            <summary>
+            Eliminar orden
+            </summary>
+            <param name="Id">Id</param>
+            <returns>resultado</returns>
+        </member>
+        <member name="T:Altiora.Service.Program">
+            <summary>
+            Programa
+            </summary>
+        </member>
+        <member name="M:Altiora.Service.Program.Main(System.String[])">
+            <summary>
+            Método principa
+            </summary>
+            <param name="args">argumentos</param>
+        </member>
+        <member name="M:Altiora.Service.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creador de servidor
+            </summary>
+            <param name="args">argumentos</param>
+            <returns>host</returns>
+        </member>
+        <member name="T:Altiora.Service.Startup">
+            <summary>
+            Inicio
+            </summary>
+        </member>
+        <member name="M:Altiora.Service.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration">configuraciones</param>
+        </member>
+        <member name="P:Altiora.Service.Startup.Configuration">
+            <summary>
+            Configuraciones
+            </summary>
+        </member>
+        <member name="M:Altiora.Service.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuracion de servicio
+            </summary>
+            <param name="services">Servicio</param>
+        </member>
+        <member name="M:Altiora.Service.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configuracion
+            </summary>
+            <param name="app">Constructor Aplicacion</param>
+            <param name="env">Entorno</param>
+        </member>
+    </members>
+</doc>
