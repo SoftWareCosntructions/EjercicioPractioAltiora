@@ -7,82 +7,15 @@ sin embargo, solo para una de ellas, esa pantalla debe permitir modificar y elim
 de crear (es suficiente un solo ejemplo de CRUD completo).
 
 ## Instrucciones
-Base de datos:
-Para crear la base de datos, debe ir al proyecto Altiora.Service y en el archivo settings.json reemplazar la cadena de conección.
-#### Para generar migraciones
-dotnet ef --startup-project .\Altiora.Service\Altiora.Service.csproj migrations add InitialModel -p .\Altiora.DataAccess\Altiora.DataAccess.csproj
+Una vez clonado o descargado el repositorio, vamos a crear la base de datos, abriendo power shell en la raiz del proyecto y ejecutamos el siguiente comando:
 
-#### Para actualizar la base de datos  colocar la consola en la raiz del proyecto y ejecutar el siguiente comando:
+```Power Shell
 dotnet ef --startup-project .\Altiora.Service\Altiora.Service.csproj database update
-
-#### Para añadir datos en las tablas colocar la consola en la raiz del proyecto y ejecutar el siguiente comando:
-dotnet ef --startup-project .\Altiora.Service\Altiora.Service.csproj migrations add SeedDataTable -p .\Altiora.DataAccess\Altiora.DataAccess.csproj
-
-A continuacion en el archivo generado agregamos el siguiente codigo:
-
-```C#
-protected override void Up(MigrationBuilder migrationBuilder)
-        {
-            //Agregar Articulos
-            migrationBuilder
-                .Sql("SET IDENTITY_INSERT alti_tab_articulos ON " +
-                     "  INSERT INTO alti_tab_articulos " +
-                     "  (CodigoArticulo, NombreArticulo, PrecioUnitarioArticulo)VALUES " +
-                     "  (1, 'PROD001', 'Laptop DEL I5', 845.00), " +
-                     "  (2, 'PROD002', 'Laptop HP I3', 625.00), " +
-                     "  (3, 'PROD003', 'Laptop Lenovo AMD Ryzen 5', 632.00)" +
-                    "SET IDENTITY_INSERT alti_tab_articulos OFF");
-
-            //Agregar Clientes 
-            migrationBuilder
-                .Sql("SET IDENTITY_INSERT alti_tab_clientes ON " +
-                     "  INSERT INTO alti_tab_clientes " +
-                     "  (IdCliente, DniCliente, Nombre, Apellido)VALUES " +
-                     "  (1, '1717007197', 'Santiago', 'Almeida'), " +
-                     "  (2, '1713824577', 'Irene', 'Villalobos'), " +
-                     "  (3, '1800789745', 'Juan', 'Saltos')" +
-                    "SET IDENTITY_INSERT alti_tab_clientes OFF");
-
-            //Agregar Ordenes
-            migrationBuilder
-                .Sql("SET IDENTITY_INSERT alti_tab_ordenes ON " +
-                    "   INSERT INTO alti_tab_ordenes " +
-                    "   (IdOrden, FechaOrden, IdCliente, NumeroOrden, Subtotal, MontoIva, MontoTotal)VALUES " +
-                    "   (1, '20201208', 1, 'ORD00001', 845.00, 101.4, 946), " +
-                    "   (2, '20201209', 2, 'ORD00002', 625.00, 75, 700) " +
-                    "SET IDENTITY_INSERT alti_tab_ordenes OFF");
-
-            //Agregar DetallesOrden
-            migrationBuilder
-                .Sql("SET IDENTITY_INSERT alti_tab_detalles_orden ON " +
-                "   INSERT INTO alti_tab_detalles_orden " +
-                "   (IdDetalleOrden, IdOrden, IdArticulo, Cantidad, PrecioTotal)VALUES " +
-                "   (1, 1, 1, 1, 845.00), " +
-                "   (2, 2, 2, 1, 625.00) " +
-                "SET IDENTITY_INSERT alti_tab_detalles_orden OFF");
-        }
-
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder
-                .Sql("DELETE FROM alti_tab_detalles_orden");
-
-            migrationBuilder
-                .Sql("DELETE FROM alti_tab_articulos");
-
-            migrationBuilder
-                .Sql("DELETE FROM alti_tab_ordenes");
-
-            migrationBuilder
-                .Sql("DELETE FROM alti_tab_clientes");
-        }
 ```
-  
-#### A continuación actualizamos la base de datos.
-dotnet ef --startup-project .\Altiora.Service\Altiora.Service.csproj database update
+A continuación abrimos visual studio y damos click derecho en la solución y click izquierdo en propiedades, damos click dentro de "Propiedades Comunes" en "Proyecto de Inicio", y luego tomamos la opción "Proyectos de inicio múltipes", Debajo de esto verá una tabla y a la derecha de esta unas flechas para cambiar el orden. Colocamos en la primera fila el proyecto "Altiora.Service", de esa fila la columna "Acción" seleccionamos "Iniciar" y en el segunda fila ponemos al proyecto "Altiora.ClienteWeb", de esa fila la columna "Acción" también seleccionamos "Iniciar", por último damos click en "Aceptar".
 
 #### LISTO!!!
-Espero sea de su agrado
+Espero sea de su agrado.
 
 Santiago Almeida.
 099998136
